@@ -60,7 +60,7 @@ The `visualizations.zip` file contains the exported graphs:
 
 ## Files in This Repository
 
-* `EDA_Project (1).ipynb` — Executed notebook containing the analysis, code, and visualizations.
+* `EDA_Project (2).ipynb` — Executed notebook containing the analysis, code, and visualizations.
 * `visualizations.zip` — Exported visualization images.
 * `README.md` — Project documentation and key findings.
 

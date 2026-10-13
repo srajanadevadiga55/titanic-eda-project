@@ -2,54 +2,75 @@
 
 ## Project Overview
 
-This project performs Exploratory Data Analysis (EDA) on the Titanic passenger dataset using Python. The goal is to understand the data, handle missing values, identify outliers, and discover patterns related to passenger survival.
+This project performs Exploratory Data Analysis (EDA) on the Titanic passenger dataset to understand passenger characteristics, survival patterns, missing values, and potential outliers.
+
+## Dataset
+
+* **Source:** [Titanic Dataset on GitHub](https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv)
+* **Original size:** 891 rows × 12 columns
+* **Target variable:** `Survived`
+* **Survival values:** 0 = Did not survive, 1 = Survived
 
 ## Tools and Libraries
 
 * Python
-* Pandas
-* Matplotlib
-* Seaborn
+* Pandas and NumPy
+* Matplotlib and Seaborn
 * Google Colab
+* GitHub
 
-## Dataset
+## Analysis Performed
 
-The Titanic dataset contains passenger information such as age, sex, passenger class, fare, and survival status.
+1. Loaded and inspected the dataset.
+2. Checked the dataset shape, data types, summary statistics, and missing values.
+3. Checked for duplicate records.
+4. Handled missing values and removed the highly incomplete `Cabin` column.
+5. Detected potential fare outliers using the Interquartile Range (IQR) method.
+6. Created visualizations to explore survival counts, correlations, age distribution, fare outliers, and relationships between numerical variables.
 
 ## Data Cleaning
 
-* Checked for missing values and duplicate records.
-* Filled missing Age values using the median.
-* Filled missing Embarked values using the mode.
-* Removed the Cabin column because it contained many missing values.
-* Verified that no missing values remained in the cleaned dataset.
+* **Age:** Filled 177 missing values using the median.
+* **Embarked:** Filled 2 missing values using the mode.
+* **Cabin:** Removed because 687 values (77.10%) were missing.
+* **Duplicates:** No duplicate rows were detected.
+* **Fare outliers:** Detected 116 potential outliers using the IQR method. They were retained because they may represent valid fares.
+
+The cleaned dataset contains **891 rows and 11 columns**, with no missing values.
+
+## Key Analytical Insights
+
+* 342 passengers survived (38.4%), while 549 did not survive (61.6%).
+* The dataset contains missing values in `Age`, `Cabin`, and `Embarked`.
+* The fare distribution contains potential high-value outliers.
+* The correlation heatmap helps explore relationships among numerical variables.
+* Passenger survival patterns can be explored using passenger class, age, and fare.
+
+These findings describe patterns in the dataset and do not establish causation.
 
 ## Visualizations
 
-The project includes:
+The `visualizations.zip` file contains the exported graphs:
 
-* Survival count plot
+* Survival count
 * Correlation heatmap
-* Age distribution histogram
+* Age distribution
 * Fare boxplot
 * Pairwise scatter plots
 
-The visualizations are available in `visualizations.zip`.
+## Files in This Repository
 
-## Key Observations
-
-* Approximately 38.4% of passengers survived.
-* The dataset contained 891 rows and 12 columns before cleaning.
-* Age had 177 missing values, while Cabin had 687 missing values.
-* Passenger class, fare, age, and other features can be explored to understand survival patterns.
-* The fare boxplot helps identify unusually high ticket fares.
-
-## Files
-
-* `EDA_Project.ipynb` — Complete analysis and Python code.
+* `EDA_Project (1).ipynb` — Executed notebook containing the analysis, code, and visualizations.
 * `visualizations.zip` — Exported visualization images.
-* `README.md` — Project documentation.
+* `README.md` — Project documentation and key findings.
+
+## How to Run
+
+1. Download the notebook from this repository.
+2. Open [Google Colab](https://colab.research.google.com/).
+3. Upload and open the notebook.
+4. Run the cells from top to bottom.
 
 ## Conclusion
 
-This project demonstrates the basic EDA workflow: inspecting data, cleaning missing values, analyzing numerical features, creating visualizations, and interpreting patterns in the Titanic dataset.
+This EDA project demonstrates data inspection, missing-value handling, duplicate checking, IQR-based outlier detection, and visualization using Python. It provides an initial understanding of the Titanic dataset and its survival patterns.
